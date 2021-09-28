@@ -1,10 +1,8 @@
-<% include partials/header.ejs %> 
-<% include partials/main_nav.ejs %> 
+<%- include partials/header.ejs %> 
+<%- include partials/main_nav.ejs %> 
 
-    <main class="container">
-      <div class="jumbotron p-5" style="background-color: gray;">
-        <h1 class="display-4">Hi! My name is Andrew Sit.<br> I am a web developer.</h1>
-      </div>
-    </main>
+<% if (title == "Home") { %> 
+<%- include partials/home.ejs %>
+<% } %> 
 
-<% include partials/footer.ejs %> 
+<%- include partials/footer.ejs %> 
