@@ -9,16 +9,16 @@ router.get('/home', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About' });
+  res.render('index', { title: 'About Me' });
 });
-router.get('/products', function(req, res, next) {
-  res.render('index', { title: 'Products' });
+router.get('/projects', function(req, res, next) {
+  res.render('index', { title: 'Projects' });
 });
 router.get('/services', function(req, res, next) {
   res.render('index', { title: 'Services' });
 });
 router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact Us' });
+  res.render('index', { title: 'Contact Me' });
 });
 
 module.exports = router;
