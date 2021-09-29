@@ -23,3 +23,16 @@ a:hover, a:active {
 .home-nav a:hover {
     color: white;
 }
+
+/* Contact Me page */
+.contact-form-input {
+    width: 20%;
+    min-width: 280px;
+    margin-bottom: 5px;
+}
+
+.contact-form-msg {
+    width: 45%;
+    height: 80px;
+    min-width: 280px;
+}
