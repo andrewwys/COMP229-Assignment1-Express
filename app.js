@@ -1,4 +1,4 @@
-// Filename: views/partials/error.ejs
+// Filename: app.js
 // Wing Yin Andrew Sit (# 301188571)
 // Creation date: 2021/09/27
 // last revision: 2021/09/27
@@ -10,7 +10,8 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
+// commented out users for Assignment1
+// let usersRouter = require('./routes/users');
 
 let app = express();
 
@@ -30,7 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// commented out users for Assignment1
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
