@@ -3,13 +3,23 @@ body {
 }
 
 a {
-    color: gray;
+    color: white;
+    text-decoration: underline;
 }
 
-a:hover {
+a:visited, a:link {
     color: white;
 }
 
-a:hover, a:visited, a:link, a:active {
+a:hover, a:active {
+    color: #4B7AB0;
+}
+
+.home-nav a{
+    color: gray;
     text-decoration: none;
+}
+
+.home-nav a:hover {
+    color: white;
 }
