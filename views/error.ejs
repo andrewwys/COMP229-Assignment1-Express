@@ -1,3 +1,11 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!-- Filename: views/partials/error.ejs
+Wing Yin Andrew Sit (# 301188571)
+Creation date: 2021/09/27
+last revision: 2021/09/29 -->
+
+<div class='error-page'>
+    <h2><%= error.status %>  <%= message %></h2>
+    <h1>That page does not exist.</h1>
+    <h3>Please visit the <a href="/home">Home Page</a>.</h3>
+</div>
+<link rel='stylesheet' href='/stylesheets/app.css' />

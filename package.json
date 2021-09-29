@@ -23,7 +23,7 @@
     "serve-favicon": "^2.5.0"
   },
   "description": "COMP229 - Web Application Development\r Name: Wing Yin Andrew Sit\r Student no.: 301188571",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",

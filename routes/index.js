@@ -1,7 +1,12 @@
+/* Filename: routes/index.js
+  Wing Yin Andrew Sit (# 301188571)
+  Creation date: 2021/09/27
+  last revision: 2021/09/29
+  
+  Routing for 5 pages. */
+
 var express = require('express');
 var router = express.Router();
-
-/* Routes navigation for all 5 pages. */
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });

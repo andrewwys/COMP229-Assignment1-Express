@@ -1,3 +1,8 @@
+// Filename: views/partials/error.ejs
+// Wing Yin Andrew Sit (# 301188571)
+// Creation date: 2021/09/27
+// last revision: 2021/09/27
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -9,7 +14,7 @@ let usersRouter = require('./routes/users');
 
 let app = express();
 
-// Favicon
+// Added Favicon
 var favicon = require('serve-favicon');
 app.use(favicon(__dirname + '/public/Assets/images/favicon.ico'));
 

@@ -1,5 +1,13 @@
-<!-- The entry to the site; Split into partials -->
+<!-- Filename: views/partials/index.ejs
+Wing Yin Andrew Sit (# 301188571)
+Creation date: 2021/09/27
+last revision: 2021/09/29 -->
+
+<!-- The main ejs file of the site; Split into partials -->
+
+<!-- HTML head -->
 <%- include partials/header.ejs %> 
+<!-- Top navigation menu bar -->
 <%- include partials/main_nav.ejs %> 
 
 <!-- The main content displaying depending on title-->
@@ -14,5 +22,6 @@
 <% } else if (title == "Contact Me") { %> 
   <%- include partials/contact.ejs %>
 <% } %> 
-  
+
+<!-- the site footer -->
 <%- include partials/footer.ejs %> 

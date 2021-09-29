@@ -1,17 +1,25 @@
+<!-- Filename: views/partials/main_nav.ejs
+Wing Yin Andrew Sit (# 301188571)
+Creation date: 2021/09/27
+last revision: 2021/09/29 -->
+
+<!-- The partial ejs for the top navigation bar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light main-nav" >
     <div class="container-fluid">
       <!-- Site Logo added as a link to Home Page -->
       <a aria-current="page" href="/home">
         <img src="Assets\images\logo.jpg" width="40px"/>
       </a>
+      <!-- The menu button applicable to mobile view -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>
-
+      <!-- Links on the top menu bar: the link for the current page will be set to "active" -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pe-2 mb-2 mb-lg-0">
          <ul class="navbar-nav ms-auto pe-2 mb-2 mb-lg-0">
           <li class="nav-item">
+          <!-- Menu item to Home -->
           <% if (title == "Home") { %>
             <a class="nav-link active" aria-current="page" href="/home">
           <% } else { %>
@@ -19,7 +27,7 @@
           <% } %> 
             <i class="fas fa-lg fa-home"></i> Home</a>
           </li>
-
+          <!-- Menu item to About Me -->
           <li class="nav-item">
             <% if (title == "About Me") { %>
               <a class="nav-link active" aria-current="page" href="/about">
@@ -28,7 +36,7 @@
             <% } %> 
               <i class="fas fa-lg fa-info-circle"></i> About Me</a>
           </li>
-
+          <!-- Menu item to Projects -->
           <li class="nav-item">
             <% if (title == "Projects") { %>
               <a class="nav-link active" aria-current="page" href="/projects">
@@ -37,7 +45,7 @@
             <% } %> 
               <i class="fas fa-lg fa-place-of-worship"></i> Projects</a>
           </li>
-
+          <!-- Menu item to Services -->
           <li class="nav-item">
             <% if (title == "Services") { %>
               <a class="nav-link active" aria-current="page" href="/services">
@@ -46,7 +54,7 @@
             <% } %> 
               <i class="fas fa-lg fa-hand-holding-heart"></i> Services</a>
           </li>
-
+          <!-- Menu item to Contact Me-->
           <li class="nav-item">
             <% if (title == "Contact Me") { %>
               <a class="nav-link active" aria-current="page" href="/contact">
