@@ -1,3 +1,3 @@
 module.exports = {
-    "URI": "mongodb://localhost/book_store"
+    "URI": "mongodb://localhost/contact_list"
 }

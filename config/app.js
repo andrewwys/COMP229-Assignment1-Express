@@ -22,6 +22,7 @@ mongoDB.once('open', ()=> {
 })
 
 let indexRouter = require('../routes/index');
+let constactsRouter = require('../routes/contactList');
 // commented out users for Assignment1
 // let usersRouter = require('./routes/users');
 
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 app.use('/', indexRouter);
+app.use('/contact-list', constactsRouter);
 // commented out users for Assignment1
 // app.use('/users', usersRouter);
 
