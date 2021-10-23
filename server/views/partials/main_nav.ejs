@@ -1,15 +1,14 @@
 <!-- Filename: views/partials/main_nav.ejs
 Wing Yin Andrew Sit (# 301188571)
-Creation date: 2021/09/27
-last revision: 2021/09/29 -->
+Creation date: 2021/09/27->
 
 <!-- The partial ejs for the top navigation bar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light main-nav" >
     <div class="container-fluid">
       <!-- Site Logo added as a link to Home Page -->
       <a aria-current="page" href="/home">
-        <img src="Assets\images\logo.jpg" width="40px"/>
-      </a>
+        <img src="../../../Assets/images/logo.jpg" width="40px"/>
+      </a
       <!-- The menu button applicable to mobile view -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
@@ -53,6 +52,15 @@ last revision: 2021/09/29 -->
               <a class="nav-link" aria-current="page" href="/services">
             <% } %> 
               <i class="fas fa-lg fa-hand-holding-heart"></i> Services</a>
+          </li>
+          <!-- Menu item to Business Contact-->
+          <li class="nav-item">
+            <% if (title == "Business Contacts") { %>
+              <a class="nav-link active" aria-current="page" href="/contact-list">
+            <% } else { %>
+              <a class="nav-link" aria-current="page" href="/contact-list">
+            <% } %> 
+              <i class="fas fa-lg fa-user-tie"></i> Business Contacts</a>
           </li>
           <!-- Menu item to Contact Me-->
           <li class="nav-item">

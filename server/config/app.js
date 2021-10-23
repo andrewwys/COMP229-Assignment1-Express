@@ -23,14 +23,14 @@ mongoDB.once('open', ()=> {
 
 let indexRouter = require('../routes/index');
 let constactsRouter = require('../routes/contactList');
-// commented out users for Assignment1
 // let usersRouter = require('./routes/users');
 
 let app = express();
 
 // Added Favicon
 var favicon = require('serve-favicon');
-app.use(favicon(path.join(__dirname, '../public/Assets/images/favicon.ico')));
+// app.use(favicon(path.join(__dirname, '/public/Assets/images/favicon.ico')));
+app.use(favicon(path.join(__dirname, '../../public/Assets/images/favicon.ico')));
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -40,8 +40,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname, '../node_modules')));
+app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/contact-list', constactsRouter);
