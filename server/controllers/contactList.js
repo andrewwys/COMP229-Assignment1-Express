@@ -22,6 +22,12 @@ module.exports.displayContactList = (req, res, next) => {
 }
 
 // GET Route for displaying Add Contact page - CREATE
+module.exports.displayAddContact = (req, res, next) =>{ 
+    res.render('businessContacts/add', {title: 'Add Contact'});
+}
+
+
+// POST process Add Contact
 module.exports.addContact = (req, res, next) =>{ 
     let newContact = contacts({
         "name": req.body.name,

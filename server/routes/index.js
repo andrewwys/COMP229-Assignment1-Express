@@ -21,4 +21,9 @@ router.get('/services', indexController.displayServicesPage);
 
 router.get('/contact', indexController.displayContactMePage);
 
+// Login page
+router.get('/login', indexController.displayLoginPage);
+
+router.post('/login', indexController.processLoginPage);
+
 module.exports = router;

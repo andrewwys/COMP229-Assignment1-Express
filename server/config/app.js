@@ -29,7 +29,7 @@ mongoDB.once('open', ()=> {
 
 let indexRouter = require('../routes/index');
 let constactsRouter = require('../routes/contactList');
-// let usersRouter = require('./routes/users');
+let usersRouter = require('../routes/users');
 
 let app = express();
 
@@ -49,10 +49,37 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+// setup express session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+// initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user configuration
+
+// create a User Model Instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
+// implement a User Authentication Strategy
+passport.use(User.createStrategy());
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 app.use('/', indexRouter);
 app.use('/contact-list', constactsRouter);
-// commented out users for Assignment1
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
