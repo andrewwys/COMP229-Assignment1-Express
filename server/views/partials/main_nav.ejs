@@ -71,6 +71,16 @@ Creation date: 2021/09/27->
             <% } %> 
               <i class="fas fa-lg fa-mobile-alt"></i> Contact Me</a>
           </li>
+
+          <!-- Login/Logout -->
+          <li class="nav-item">
+            <% if (typeof email == 'string' && email) { %>
+              <a href="/logout" class="nav-link"><i class="fas fa-sign-in-alt"></i>Log out</a>
+            <% } else { %>
+              <a href="/login" class="nav-link"><i class="fas fa-sign-in-alt"></i>Login</a>
+            <% } %> 
+          </li>
+
         </ul>
       </div>
     </div>

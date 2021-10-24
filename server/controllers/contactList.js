@@ -3,7 +3,7 @@
 // Creation date: 2021/10/23
 
 let express = require('express');
-let router = express.Router();
+// let router = express.Router();
 let mongoose = require('mongoose');
 
 // connect to contact list
@@ -28,14 +28,14 @@ module.exports.displayContactList = (req, res, next) => {
         if(err) {
             return console.error(err);
         } else {
-            res.render('businessContacts/contactList', {title: 'Business Contacts', contactList: contactList})
+            res.render('businessContacts/contactList', {title: 'Business Contacts', contactList: contactList, email: req.user? req.user.email : ''})
         }
     })
 }
 
 // GET Route for displaying Add Contact page - CREATE
 module.exports.displayAddContact = (req, res, next) =>{ 
-    res.render('businessContacts/add', {title: 'Add Contact'});
+    res.render('businessContacts/add', {title: 'Add Contact', email: req.user? req.user.email : ''});
 }
 
 
@@ -69,7 +69,7 @@ module.exports.displayEditPage = (req, res, next) =>{
             res.end(err);
         } else {
             // show edit contact view
-            res.render('businessContacts/edit', {title: 'Edit Contact', contact: contactToEdit})
+            res.render('businessContacts/edit', {title: 'Edit Contact', contact: contactToEdit, email: req.user? req.user.email : ''})
         }
     })
 }

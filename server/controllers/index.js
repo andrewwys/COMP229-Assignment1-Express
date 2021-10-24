@@ -12,23 +12,23 @@ let userModel = require('../models/user');
 let User = userModel.User; // alias
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', {title: 'Home'});
+    res.render('index', {title: 'Home', email: req.user? req.user.email : ''});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('index', {title: 'About Me'});
+    res.render('index', {title: 'About Me', email: req.user? req.user.email : ''});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('index', {title: 'Projects'});
+    res.render('index', {title: 'Projects', email: req.user? req.user.email : ''});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('index', {title: 'Services'});
+    res.render('index', {title: 'Services', email: req.user? req.user.email : ''});
 }
 
 module.exports.displayContactMePage = (req, res, next) => {
-    res.render('index', {title: 'Contact Me'});
+    res.render('index', {title: 'Contact Me', email: req.user? req.user.email : ''});
 }
 
 // Login Page
@@ -38,7 +38,8 @@ module.exports.displayLoginPage = (req, res, next) => {
         res.render('auth/login', {
             title: "Login", 
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            email: req.user? req.user.email : ''
         })
     } else {
         return res.redirect('/');
@@ -75,7 +76,8 @@ module.exports.displayRegisterPage = (req, res, next) => {
         {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            displayName: req.user ? req.user.displayName : '',
+            email: req.user? req.user.email : ''
         });
     }
     else
