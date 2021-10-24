@@ -13,6 +13,18 @@ let contacts = require('../models/contacts');
 // GET Route for Contact List page - READ operation
 module.exports.displayContactList = (req, res, next) => {
     contacts.find((err, contactList) => {
+        // sort the contact by name
+        contactList.sort((a, b) => {
+            let nameA = a.name.toLowerCase();
+            let nameB = b.name.toLowerCase();
+            if (nameA < nameB) {
+                return -1
+            }
+            if (nameA > nameB) {
+                return 1
+            }
+            return 0
+        })
         if(err) {
             return console.error(err);
         } else {
